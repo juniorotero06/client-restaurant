@@ -1,0 +1,751 @@
+/* Puedes agregar estos estilos en tu archivo CSS global o en un archivo CSS específico para el componente */
+
+.table-responsive {
+  margin: 20px auto;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.custom-img {
+  width: 100px; /* Ajusta este valor como lo necesites */
+  height: auto; /* Esto mantendrá la proporción de la imagen */
+}
+
+/* Mejora la responsividad en dispositivos móviles */
+@media (max-width: 768px) {
+  .table-responsive {
+    border: 0;
+  }
+  .custom-img {
+    width: 50px; /* Ajusta el tamaño de la imagen para pantallas pequeñas */
+  }
+}
+
+.inventory-section {
+  padding: 20px;
+}
+
+/* Estilos para filtros */
+.filters-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.filters-container .form-label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.filters-container .form-control,
+.filters-container .form-select {
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.filters-container .form-control:focus,
+.filters-container .form-select:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.filters-container .btn-outline-secondary {
+  border-color: #6c757d;
+  color: #6c757d;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: all 0.15s ease-in-out;
+}
+
+.filters-container .btn-outline-secondary:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+}
+
+.filters-container .form-check-input:checked {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.filters-container .form-check-label {
+  font-size: 14px;
+  color: #495057;
+}
+
+/* Estilos para paginación */
+.pagination-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.pagination {
+  margin-bottom: 0;
+}
+
+.pagination .page-link {
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: all 0.15s ease-in-out;
+}
+
+.pagination .page-link:hover {
+  color: #0056b3;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  background-color: #fff;
+  border-color: #dee2e6;
+  cursor: not-allowed;
+}
+
+/* Estilos para la tabla */
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.badge.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+.badge.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.badge.bg-warning {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+}
+
+.badge.bg-success {
+  background-color: #198754 !important;
+}
+
+/* Responsive para filtros */
+@media (max-width: 768px) {
+  .filters-container .row {
+    margin: 0;
+  }
+  
+  .filters-container .col-md-2 {
+    padding: 0 5px;
+    margin-bottom: 15px;
+  }
+  
+  .filters-container .form-label {
+    font-size: 12px;
+  }
+  
+  .filters-container .form-control,
+  .filters-container .form-select {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+  
+  .pagination-container {
+    padding: 15px;
+  }
+  
+  .pagination .page-link {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  .pagination-container .d-flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .pagination-container .d-flex > div:first-child {
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  .table-responsive {
+    font-size: 12px;
+  }
+}
+
+/* Animaciones para mejor UX */
+.filters-container,
+.pagination-container {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para mensaje de no resultados */
+.table tbody tr td[colspan] {
+  padding: 40px 20px;
+  color: #6c757d;
+  font-style: italic;
+  background-color: #f8f9fa;
+}
+
+/* Estilos para la página de inventario */
+.inventary-container {
+  padding: 20px;
+}
+
+.inventory-section {
+  animation: slideInFromTop 0.6s ease-out;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para información de ingredientes */
+.ingredient-name {
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.ingredient-description {
+  color: #666;
+  font-size: 12px;
+  line-height: 1.4;
+  max-width: 200px;
+}
+
+/* Estilos para unidad de medida */
+.unit-badge {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid #ced4da;
+}
+
+/* Estilos para detalles expandidos */
+.ingredient-details-expanded {
+  animation: fadeInDetails 0.4s ease-out;
+}
+
+@keyframes fadeInDetails {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.detail-item {
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #007bff;
+}
+
+.detail-item strong {
+  color: #495057;
+  margin-right: 8px;
+}
+
+/* Estilos para botones de acción */
+.btn-outline-primary,
+.btn-outline-success,
+.btn-outline-warning {
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2px;
+}
+
+.btn-outline-primary:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+.btn-outline-success:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.btn-outline-warning:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+}
+
+/* Estilos para el contenedor principal */
+.inventory-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de partículas flotantes */
+.inventory-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 123, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(40, 167, 69, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundFloat 20s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(-1deg);
+  }
+}
+
+/* Estilos para iconos */
+.fas, .far {
+  transition: all 0.3s ease;
+}
+
+.fas:hover, .far:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inventary-container {
+    padding: 15px;
+  }
+  
+  .inventory-section {
+    margin: 10px;
+  }
+  
+  .ingredient-name {
+    font-size: 13px;
+  }
+  
+  .ingredient-description {
+    font-size: 11px;
+    max-width: 150px;
+  }
+  
+  .unit-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+  
+  .btn-outline-primary,
+  .btn-outline-success,
+  .btn-outline-warning {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .detail-item {
+    padding: 6px;
+    font-size: 12px;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* Estilos para estados de stock */
+.stock-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.stock-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.stock-badge:hover::before {
+  left: 100%;
+}
+
+.stock-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el título de la página */
+.page-title {
+  background: linear-gradient(45deg, #007bff 0%, #0056b3 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Estilos para animaciones adicionales */
+.inventory-section {
+  animation: slideInFromTop 0.6s ease-out;
+}
+
+.ingredient-details-expanded {
+  animation: fadeInDetails 0.4s ease-out;
+}
+
+/* Estilos para el estado de carga */
+.loading-state {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Estilos para el estado vacío */
+.empty-state {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.empty-state i {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Estilos para badges */
+.badge {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.badge:hover::before {
+  left: 100%;
+}
+
+.badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación de los filtros individuales */
+.filter-group {
+  animation: filterSlideIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.filter-group:nth-child(1) { animation-delay: 0.1s; }
+.filter-group:nth-child(2) { animation-delay: 0.2s; }
+.filter-group:nth-child(3) { animation-delay: 0.3s; }
+.filter-group:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes filterSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación del botón limpiar filtros */
+.btn-outline-secondary {
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  transform: rotate(5deg);
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+  .inventary-container {
+    animation: slideInFromTop 0.4s ease-out;
+  }
+  
+  .filters-section {
+    animation: slideInFromLeft 0.3s ease-out;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+  
+  .table tbody tr:hover {
+    transform: none;
+  }
+  
+  .page-link:hover {
+    transform: none;
+  }
+}
+
+/* Animación de los niveles de stock */
+.badge.bg-danger {
+  animation: criticalPulse 2s ease-in-out infinite;
+}
+
+@keyframes criticalPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.6);
+  }
+}
+
+.badge.bg-warning {
+  animation: lowPulse 2s ease-in-out infinite;
+}
+
+@keyframes lowPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
+  }
+}
+
+.badge.bg-success {
+  animation: normalGlow 2s ease-in-out infinite;
+}
+
+@keyframes normalGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.6);
+  }
+}
+
+/* Animación de los iconos */
+.fas, .far {
+  transition: all 0.3s ease;
+}
+
+.fas:hover, .far:hover {
+  transform: scale(1.2);
+}
+
+/* Efecto de brillo en elementos importantes */
+.table thead th {
+  position: relative;
+}
+
+.table thead th::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #28a745, #20c997, #28a745);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  animation: headerGlow 3s ease-in-out infinite;
+}
+
+@keyframes headerGlow {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+/* Animación de las cantidades de stock */
+.stock-quantity {
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.stock-quantity:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Animación de las categorías */
+.category-badge {
+  transition: all 0.3s ease;
+}
+
+.category-badge:hover {
+  transform: rotate(5deg) scale(1.1);
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+}
+
+/* Efecto de partículas para ingredientes críticos */
+.table tbody tr:has(.bg-danger) {
+  position: relative;
+}
+
+.table tbody tr:has(.bg-danger)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(220, 53, 69, 0.05), transparent);
+  animation: criticalRowGlow 3s ease-in-out infinite;
+}
+
+@keyframes criticalRowGlow {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

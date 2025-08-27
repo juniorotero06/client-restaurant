@@ -1,0 +1,323 @@
+/* Estilos para la página de ingredientes */
+.ingredients-header {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-bottom: 1px solid #e9ecef;
+}
+
+.ingredients-section {
+  animation: slideInFromTop 0.6s ease-out;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para información de ingredientes */
+.ingredient-info {
+  text-align: left;
+  padding: 8px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 1px solid #e9ecef;
+}
+
+.ingredient-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.ingredient-description {
+  color: #666;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+/* Estilos para cantidad */
+.quantity-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Estilos para unidad de medida */
+.unit-badge {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid #ced4da;
+}
+
+/* Estilos para información de origen */
+.origin-info {
+  font-size: 12px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.origin-info i {
+  color: #dc3545;
+  margin-right: 4px;
+}
+
+/* Estilos para detalles expandidos */
+.ingredient-details {
+  animation: fadeInDetails 0.4s ease-out;
+}
+
+@keyframes fadeInDetails {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.detail-item {
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #007bff;
+}
+
+.detail-item strong {
+  color: #495057;
+  margin-right: 8px;
+}
+
+/* Estilos para botones de acción */
+.btn-outline-primary,
+.btn-outline-success,
+.btn-outline-warning {
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2px;
+}
+
+.btn-outline-primary:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+.btn-outline-success:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.btn-outline-warning:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+}
+
+/* Estilos para badges de categoría */
+.badge {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.badge:hover::before {
+  left: 100%;
+}
+
+.badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el header */
+.ingredients-header h4 {
+  color: #333;
+  font-weight: 600;
+}
+
+.ingredients-header h4 i {
+  color: #ff6b35;
+}
+
+.ingredients-header p {
+  font-size: 14px;
+}
+
+/* Estilos para botones del header */
+.ingredients-header .btn {
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.ingredients-header .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.ingredients-header .btn-success:hover {
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ingredients-header {
+    padding: 15px !important;
+  }
+  
+  .ingredients-header .d-flex {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .ingredients-header .d-flex > div:last-child {
+    width: 100%;
+  }
+  
+  .ingredients-header .btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  
+  .ingredient-info {
+    padding: 6px;
+  }
+  
+  .ingredient-name {
+    font-size: 13px;
+  }
+  
+  .ingredient-description {
+    font-size: 10px;
+  }
+  
+  .quantity-number {
+    font-size: 16px;
+  }
+  
+  .unit-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+  
+  .origin-info {
+    font-size: 11px;
+  }
+  
+  .btn-outline-primary,
+  .btn-outline-success,
+  .btn-outline-warning {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .detail-item {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
+
+/* Animaciones adicionales */
+.ingredients-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.ingredients-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(33, 150, 243, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundFloat 20s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(-1deg);
+  }
+}
+
+/* Estilos para estados de stock */
+.quantity-number {
+  position: relative;
+}
+
+.quantity-number::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6b35, #ff8c42);
+  transition: width 0.3s ease;
+}
+
+.quantity-number:hover::after {
+  width: 100%;
+}
+
+/* Estilos para iconos */
+.fas, .far {
+  transition: all 0.3s ease;
+}
+
+.fas:hover, .far:hover {
+  transform: scale(1.2);
+}
+
+/* Estilos para el contenedor principal */
+.ingredients-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}

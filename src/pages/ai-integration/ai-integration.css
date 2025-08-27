@@ -1,0 +1,626 @@
+/* Estilos para la página de integración de IA */
+.ai-integration-container {
+  animation: slideInFromTop 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efecto de partículas de fondo */
+.ai-integration-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 177, 156, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 150, 136, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(0, 177, 156, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: aiBackgroundFloat 30s ease-in-out infinite;
+}
+
+@keyframes aiBackgroundFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(20px) rotate(-2deg);
+  }
+}
+
+/* Header con título animado */
+.ai-header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #00B19C 0%, #00897B 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: headerShine 3s ease-in-out infinite;
+}
+
+@keyframes headerShine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.ai-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #fff, #f0f8ff, #fff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.ai-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  animation: subtitleFadeIn 1s ease-out 0.5s both;
+}
+
+@keyframes subtitleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+}
+
+/* Sección de estadísticas */
+.stats-section {
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #00B19C 0%, #00897B 100%);
+  color: white;
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: statCardSlideIn 0.8s ease-out;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes statCardSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.stat-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 177, 156, 0.3);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  animation: statCardShine 3s ease-in-out infinite;
+}
+
+@keyframes statCardShine {
+  0% {
+    transform: rotate(45deg) translateX(-100%);
+  }
+  50% {
+    transform: rotate(45deg) translateX(100%);
+  }
+  100% {
+    transform: rotate(45deg) translateX(100%);
+  }
+}
+
+.stat-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.stat-content h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: numberCount 2s ease-out;
+}
+
+@keyframes numberCount {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.stat-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Información de integración */
+.integration-info {
+  padding: 40px 20px;
+  background: #f8f9fa;
+}
+
+.info-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  animation: infoCardSlideIn 0.8s ease-out;
+}
+
+.info-card:nth-child(1) { animation-delay: 0.1s; }
+.info-card:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes infoCardSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h3 {
+  color: #00B19C;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-card li {
+  padding: 8px 0;
+  position: relative;
+  padding-left: 25px;
+}
+
+.info-card li::before {
+  content: '🤖';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  animation: listItemGlow 2s ease-in-out infinite;
+}
+
+@keyframes listItemGlow {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Sección de recetas de IA */
+.ai-recipes-section {
+  padding: 40px 20px;
+  background: white;
+}
+
+.section-title {
+  text-align: center;
+  color: #00B19C;
+  margin-bottom: 30px;
+  font-weight: bold;
+  animation: sectionTitleGlow 3s ease-in-out infinite;
+}
+
+@keyframes sectionTitleGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(0, 177, 156, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 177, 156, 0.6);
+  }
+}
+
+.loading-container {
+  text-align: center;
+  padding: 50px;
+  color: #00B19C;
+}
+
+.ai-recipes-table {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  animation: tableSlideIn 1s ease-out;
+}
+
+@keyframes tableSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ai-recipes-table thead {
+  background: linear-gradient(135deg, #00B19C 0%, #00897B 100%);
+  color: white;
+}
+
+.ai-recipes-table th {
+  border: none;
+  padding: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ai-recipe-row {
+  animation: rowFadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+  transition: all 0.3s ease;
+}
+
+.ai-recipe-row:nth-child(1) { animation-delay: 0.1s; }
+.ai-recipe-row:nth-child(2) { animation-delay: 0.2s; }
+.ai-recipe-row:nth-child(3) { animation-delay: 0.3s; }
+.ai-recipe-row:nth-child(4) { animation-delay: 0.4s; }
+.ai-recipe-row:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes rowFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.ai-recipe-row:hover {
+  background: linear-gradient(90deg, rgba(0, 177, 156, 0.05), rgba(0, 137, 123, 0.05));
+  transform: translateX(5px);
+}
+
+.recipe-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.ai-badge {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  animation: aiBadgePulse 2s ease-in-out infinite;
+}
+
+@keyframes aiBadgePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.8);
+  }
+}
+
+.category-badge {
+  background: linear-gradient(45deg, #00B19C, #00897B);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.category-badge:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 177, 156, 0.4);
+}
+
+.difficulty-badge {
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.difficulty-badge:hover {
+  transform: scale(1.1);
+}
+
+.confidence-indicator {
+  text-align: center;
+}
+
+.confidence-badge {
+  color: white;
+  border: none;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.confidence-badge:hover {
+  transform: scale(1.1);
+}
+
+.confidence-value {
+  color: #00B19C;
+  font-weight: bold;
+}
+
+.generation-time {
+  color: #28a745;
+  font-weight: bold;
+  animation: timeGlow 2s ease-in-out infinite;
+}
+
+@keyframes timeGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(40, 167, 69, 0.6);
+  }
+}
+
+.generation-date {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.ingredients-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ingredient-tag {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.ingredient-tag:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.4);
+}
+
+.more-ingredients {
+  background: linear-gradient(45deg, #6c757d, #495057);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* Footer */
+.ai-footer {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #00B19C 0%, #00897B 100%);
+  color: white;
+  text-align: center;
+}
+
+.ai-footer h4 {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.ai-footer p {
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ai-title {
+    font-size: 2rem;
+  }
+  
+  .stat-card {
+    margin-bottom: 15px;
+  }
+  
+  .info-card {
+    margin-bottom: 15px;
+  }
+  
+  .ai-recipe-row:hover {
+    transform: none;
+  }
+  
+  .ai-recipes-table {
+    font-size: 0.9rem;
+  }
+}
+
+/* Efectos especiales para elementos de IA */
+.ai-integration-container * {
+  transition: all 0.3s ease;
+}
+
+/* Estilos para bloques de código */
+.code-block {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  border-left: 4px solid #00B19C;
+  animation: codeGlow 3s ease-in-out infinite;
+}
+
+@keyframes codeGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 177, 156, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 177, 156, 0.6);
+  }
+}
+
+.code-block pre {
+  margin: 0;
+  color: #e6e6e6;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow-x: auto;
+}
+
+.code-block code {
+  color: #00B19C;
+  font-weight: bold;
+}
+
+.code-block .string {
+  color: #4ec9b0;
+}
+
+.code-block .number {
+  color: #b5cea8;
+}
+
+.code-block .keyword {
+  color: #569cd6;
+}
+
+/* Animación de carga especial */
+.loading-container p {
+  animation: loadingText 2s ease-in-out infinite;
+}
+
+@keyframes loadingText {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Efecto de partículas flotantes */
+.ai-integration-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 177, 156, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(0, 150, 136, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: particleFloat 20s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+}

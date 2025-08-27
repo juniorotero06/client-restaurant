@@ -1,0 +1,1021 @@
+.orders-section {
+  padding: 20px;
+}
+
+.tabs-container {
+  background-color: #f8f9fa;
+}
+
+.btn-group .btn {
+  margin-right: 5px;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background-color: #ff9800;
+  color: white;
+}
+
+.status-in-progress {
+  background-color: #2196f3;
+  color: white;
+}
+
+.status-completed {
+  background-color: #4caf50;
+  color: white;
+}
+
+.status-failed {
+  background-color: #f44336;
+  color: white;
+}
+
+.recipe-info {
+  text-align: left;
+}
+
+.recipe-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.recipe-description {
+  color: #666;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.date-info {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Estilos para filtros */
+.filters-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.filters-container .form-label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.filters-container .form-control,
+.filters-container .form-select {
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.filters-container .form-control:focus,
+.filters-container .form-select:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.filters-container .btn-outline-secondary {
+  border-color: #6c757d;
+  color: #6c757d;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: all 0.15s ease-in-out;
+}
+
+.filters-container .btn-outline-secondary:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+}
+
+/* Estilos para paginación */
+.pagination-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.pagination {
+  margin-bottom: 0;
+}
+
+.pagination .page-link {
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: all 0.15s ease-in-out;
+}
+
+.pagination .page-link:hover {
+  color: #0056b3;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  background-color: #fff;
+  border-color: #dee2e6;
+  cursor: not-allowed;
+}
+
+/* Responsive para filtros */
+@media (max-width: 768px) {
+  .tabs-container {
+    flex-direction: column;
+  }
+  
+  .btn-group {
+    margin-bottom: 10px;
+  }
+  
+  .table-responsive {
+    font-size: 12px;
+  }
+  
+  .filters-container .row {
+    margin: 0;
+  }
+  
+  .filters-container .col-md-2 {
+    padding: 0 5px;
+    margin-bottom: 15px;
+  }
+  
+  .filters-container .form-label {
+    font-size: 12px;
+  }
+  
+  .filters-container .form-control,
+  .filters-container .form-select {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+  
+  .pagination-container {
+    padding: 15px;
+  }
+  
+  .pagination .page-link {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  
+  .pagination-container .d-flex {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .pagination-container .d-flex > div:first-child {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+/* Animaciones para mejor UX */
+.filters-container,
+.pagination-container {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para mensaje de no resultados */
+.table tbody tr td[colspan] {
+  padding: 40px 20px;
+  color: #6c757d;
+  font-style: italic;
+  background-color: #f8f9fa;
+} 
+
+/* Estilos para la página de órdenes */
+.orders-container {
+  animation: slideInFromTop 0.6s ease-out;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación del título */
+.page-title {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Animación de los filtros */
+.filters-section {
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animación de los inputs de filtro */
+.form-control {
+  transition: all 0.3s ease;
+  border: 2px solid #e9ecef;
+}
+
+.form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+  transform: scale(1.02);
+}
+
+/* Animación de los botones */
+.btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Efecto de brillo en botones */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Animación de las pestañas */
+.nav-tabs .nav-link {
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tabs .nav-link.active {
+  animation: tabActive 0.3s ease-out;
+}
+
+@keyframes tabActive {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animación de la tabla */
+.table-responsive {
+  animation: tableSlideIn 0.8s ease-out;
+}
+
+@keyframes tableSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de las filas de la tabla */
+.table tbody tr {
+  animation: rowFadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+.table tbody tr:nth-child(5) { animation-delay: 0.5s; }
+.table tbody tr:nth-child(6) { animation-delay: 0.6s; }
+.table tbody tr:nth-child(7) { animation-delay: 0.7s; }
+.table tbody tr:nth-child(8) { animation-delay: 0.8s; }
+.table tbody tr:nth-child(9) { animation-delay: 0.9s; }
+.table tbody tr:nth-child(10) { animation-delay: 1.0s; }
+
+@keyframes rowFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animación de hover en las filas */
+.table tbody tr:hover {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+  background-color: rgba(102, 126, 234, 0.05) !important;
+}
+
+/* Animación de los badges */
+.badge {
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación de la paginación */
+.pagination {
+  animation: slideInFromBottom 0.6s ease-out;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación de los botones de paginación */
+.page-link {
+  transition: all 0.3s ease;
+}
+
+.page-link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Animación del estado de carga */
+.loading-state {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Animación del estado vacío */
+.empty-state {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efecto de partículas flotantes en el fondo */
+.orders-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundFloat 20s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(-1deg);
+  }
+}
+
+/* Animación de los filtros individuales */
+.filter-group {
+  animation: filterSlideIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.filter-group:nth-child(1) { animation-delay: 0.1s; }
+.filter-group:nth-child(2) { animation-delay: 0.2s; }
+.filter-group:nth-child(3) { animation-delay: 0.3s; }
+.filter-group:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes filterSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación del botón limpiar filtros */
+.btn-outline-secondary {
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  transform: rotate(2deg);
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+  .orders-container {
+    animation: slideInFromTop 0.4s ease-out;
+  }
+  
+  .filters-section {
+    animation: slideInFromLeft 0.3s ease-out;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+  
+  .table tbody tr:hover {
+    transform: none;
+  }
+  
+  .page-link:hover {
+    transform: none;
+  }
+}
+
+/* Animación de los estados de orden */
+.badge.bg-warning {
+  animation: warningPulse 2s ease-in-out infinite;
+}
+
+@keyframes warningPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
+  }
+}
+
+.badge.bg-success {
+  animation: successGlow 2s ease-in-out infinite;
+}
+
+@keyframes successGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.6);
+  }
+}
+
+/* Animación de los iconos */
+.fas, .far {
+  transition: all 0.3s ease;
+}
+
+.fas:hover, .far:hover {
+  transform: scale(1.2);
+}
+
+/* Efecto de brillo en elementos importantes */
+.table thead th {
+  position: relative;
+}
+
+.table thead th::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  animation: headerGlow 3s ease-in-out infinite;
+}
+
+@keyframes headerGlow {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.1;
+  }
+} 
+
+/* Estilos para expansión de órdenes */
+.order-expansion {
+  background-color: #f8f9fa;
+  border-top: 2px solid #e9ecef;
+  padding: 20px;
+  animation: expandOrder 0.3s ease-out;
+}
+
+@keyframes expandOrder {
+  0% {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+.order-details {
+  animation: fadeInDetails 0.4s ease-out;
+}
+
+@keyframes fadeInDetails {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Estilos para las tarjetas de resultados */
+.order-details .card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-details .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.order-details .card.border-success {
+  border-color: #28a745 !important;
+  background: linear-gradient(135deg, #f8fff9 0%, #ffffff 100%);
+}
+
+.order-details .card.border-danger {
+  border-color: #dc3545 !important;
+  background: linear-gradient(135deg, #fff8f8 0%, #ffffff 100%);
+}
+
+/* Estilos para los badges de ingredientes */
+.ingredients-list .badge {
+  transition: all 0.2s ease;
+  border: 1px solid #e9ecef;
+}
+
+.ingredients-list .badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el botón de expansión */
+.btn-outline-primary {
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-outline-primary:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Estilos para el código del ID */
+code {
+  background-color: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  border: 1px solid #e9ecef;
+}
+
+/* Estilos para el estado vacío mejorado */
+.empty-state {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+}
+
+.empty-state i {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Estilos para los badges de estado mejorados */
+.badge {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.badge:hover::before {
+  left: 100%;
+}
+
+/* Estilos para los iconos en los botones */
+.btn i {
+  transition: all 0.3s ease;
+}
+
+.btn:hover i {
+  transform: scale(1.1);
+}
+
+/* Estilos para el estado de carga mejorado */
+.loading-state {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+}
+
+/* Estilos para las filas de la tabla mejoradas */
+.table tbody tr {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(102, 126, 234, 0.05) !important;
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el título de la página */
+.page-title {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los filtros mejorados */
+.filter-group {
+  animation: filterSlideIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.filter-group:nth-child(1) { animation-delay: 0.1s; }
+.filter-group:nth-child(2) { animation-delay: 0.2s; }
+.filter-group:nth-child(3) { animation-delay: 0.3s; }
+.filter-group:nth-child(4) { animation-delay: 0.4s; }
+.filter-group:nth-child(5) { animation-delay: 0.5s; }
+.filter-group:nth-child(6) { animation-delay: 0.6s; }
+
+/* Estilos para el botón limpiar filtros */
+.btn-outline-secondary {
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  padding: 8px 20px;
+}
+
+.btn-outline-secondary:hover {
+  transform: rotate(2deg);
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+/* Estilos para la información de recetas */
+.recipe-info {
+  text-align: left;
+  padding: 8px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 1px solid #e9ecef;
+}
+
+.recipe-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.recipe-description {
+  color: #666;
+  font-size: 11px;
+  font-style: italic;
+}
+
+/* Estilos para la información de fecha */
+.date-info {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Estilos para los botones de acción */
+.btn-outline-info {
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-outline-info:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(23, 162, 184, 0.3);
+}
+
+/* Estilos para la paginación mejorada */
+.pagination .page-link {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  margin: 0 2px;
+}
+
+.pagination .page-link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+.pagination .page-item.active .page-link {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Estilos para el contenedor de órdenes */
+.orders-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de partículas flotantes mejorado */
+.orders-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundFloat 20s ease-in-out infinite;
+}
+
+/* Animación de las filas de la tabla mejorada */
+.table tbody tr {
+  animation: rowFadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+.table tbody tr:nth-child(5) { animation-delay: 0.5s; }
+.table tbody tr:nth-child(6) { animation-delay: 0.6s; }
+.table tbody tr:nth-child(7) { animation-delay: 0.7s; }
+.table tbody tr:nth-child(8) { animation-delay: 0.8s; }
+.table tbody tr:nth-child(9) { animation-delay: 0.9s; }
+.table tbody tr:nth-child(10) { animation-delay: 1.0s; }
+
+/* Responsive mejorado */
+@media (max-width: 768px) {
+  .order-expansion {
+    padding: 15px;
+  }
+  
+  .order-details .card {
+    margin-bottom: 15px;
+  }
+  
+  .btn-outline-primary,
+  .btn-outline-info {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .recipe-info {
+    padding: 6px;
+  }
+  
+  .recipe-name {
+    font-size: 14px;
+  }
+  
+  .recipe-description {
+    font-size: 10px;
+  }
+  
+  .date-info {
+    font-size: 11px;
+  }
+  
+  .badge {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+}
+
+/* Estilos para el estado de éxito/fallo */
+.badge.bg-success {
+  animation: successGlow 2s ease-in-out infinite;
+}
+
+.badge.bg-danger {
+  animation: dangerGlow 2s ease-in-out infinite;
+}
+
+@keyframes successGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.6);
+  }
+}
+
+@keyframes dangerGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(220, 53, 69, 0.6);
+  }
+}
+
+/* Estilos para el encabezado de la tabla */
+.table thead th {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  color: #495057;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Estilos para el contenedor de filtros */
+.filters-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para el contenedor de paginación */
+.pagination-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+} 

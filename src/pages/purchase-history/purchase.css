@@ -1,0 +1,291 @@
+/* Estilos para la página de historial de compras */
+.purchase-history-container {
+  padding: 20px;
+}
+
+.purchase-section {
+  animation: slideInFromTop 0.6s ease-out;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para información de factura */
+.invoice-number {
+  color: #007bff;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  background-color: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+/* Estilos para información de ingredientes */
+.ingredient-info {
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border: 1px solid #e9ecef;
+}
+
+.ingredient-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Estilos para detalles expandidos */
+.purchase-details {
+  animation: fadeInDetails 0.4s ease-out;
+}
+
+@keyframes fadeInDetails {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.detail-item {
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #007bff;
+}
+
+.detail-item strong {
+  color: #495057;
+  margin-right: 8px;
+}
+
+/* Estilos para botones de acción */
+.btn-outline-primary,
+.btn-outline-info {
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2px;
+}
+
+.btn-outline-primary:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+.btn-outline-info:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(23, 162, 184, 0.3);
+}
+
+/* Estilos para el contenedor principal */
+.purchase-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de partículas flotantes */
+.purchase-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 123, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(40, 167, 69, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundFloat 20s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(-1deg);
+  }
+}
+
+/* Estilos para iconos */
+.fas, .far {
+  transition: all 0.3s ease;
+}
+
+.fas:hover, .far:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .purchase-history-container {
+    padding: 15px;
+  }
+  
+  .purchase-section {
+    margin: 10px;
+  }
+  
+  .invoice-number {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+  
+  .ingredient-info {
+    padding: 6px;
+  }
+  
+  .ingredient-name {
+    font-size: 13px;
+  }
+  
+  .btn-outline-primary,
+  .btn-outline-info {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .detail-item {
+    padding: 6px;
+    font-size: 12px;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* Estilos para estados de cantidad */
+.quantity-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.quantity-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.quantity-badge:hover::before {
+  left: 100%;
+}
+
+.quantity-badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el título de la página */
+.page-title {
+  background: linear-gradient(45deg, #007bff 0%, #0056b3 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Estilos para animaciones adicionales */
+.purchase-section {
+  animation: slideInFromTop 0.6s ease-out;
+}
+
+.purchase-details {
+  animation: fadeInDetails 0.4s ease-out;
+}
+
+/* Estilos para el estado de carga */
+.loading-state {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Estilos para el estado vacío */
+.empty-state {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.empty-state i {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

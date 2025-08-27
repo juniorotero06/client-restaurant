@@ -1,0 +1,663 @@
+/* Estilos para el componente DataTable */
+.data-table-container {
+  animation: slideInFromTop 0.6s ease-out;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para el título de la página */
+.page-title {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Estilos para filtros */
+.filters-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.filters-container .form-label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.filters-container .form-control,
+.filters-container .form-select {
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.filters-container .form-control:focus,
+.filters-container .form-select:focus {
+  border-color: #28a745;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.filters-container .btn-outline-secondary {
+  border-color: #6c757d;
+  color: #6c757d;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.filters-container .btn-outline-secondary:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+  transform: rotate(2deg);
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+/* Estilos para los filtros individuales */
+.filter-group {
+  animation: filterSlideIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.filter-group:nth-child(1) { animation-delay: 0.1s; }
+.filter-group:nth-child(2) { animation-delay: 0.2s; }
+.filter-group:nth-child(3) { animation-delay: 0.3s; }
+.filter-group:nth-child(4) { animation-delay: 0.4s; }
+.filter-group:nth-child(5) { animation-delay: 0.5s; }
+.filter-group:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes filterSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para la tabla */
+.table-responsive {
+  animation: tableSlideIn 0.8s ease-out;
+}
+
+@keyframes tableSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table thead th {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  color: #495057;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+  animation: rowFadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+.table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+.table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+.table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+.table tbody tr:nth-child(5) { animation-delay: 0.5s; }
+.table tbody tr:nth-child(6) { animation-delay: 0.6s; }
+.table tbody tr:nth-child(7) { animation-delay: 0.7s; }
+.table tbody tr:nth-child(8) { animation-delay: 0.8s; }
+.table tbody tr:nth-child(9) { animation-delay: 0.9s; }
+.table tbody tr:nth-child(10) { animation-delay: 1.0s; }
+
+@keyframes rowFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.table tbody tr:hover {
+  background-color: rgba(102, 126, 234, 0.05) !important;
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para expansión de filas */
+.row-expansion {
+  background-color: #f8f9fa;
+  border-top: 2px solid #e9ecef;
+  padding: 20px;
+  animation: expandRow 0.3s ease-out;
+}
+
+@keyframes expandRow {
+  0% {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para botones de expansión */
+.btn-outline-primary {
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.btn-outline-primary:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
+}
+
+/* Estilos para badges */
+.badge {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.badge:hover::before {
+  left: 100%;
+}
+
+.badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para código */
+code {
+  background-color: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  border: 1px solid #e9ecef;
+}
+
+/* Estilos para información de fecha */
+.date-info {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Estilos para paginación */
+.pagination-container {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 25px;
+  margin-top: 25px;
+  border-radius: 16px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  animation: slideInFromBottom 0.6s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.pagination-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #28a745, #20c997, #28a745);
+  background-size: 200% 100%;
+  animation: gradientMove 3s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pagination-container .d-flex {
+  align-items: center;
+  gap: 20px;
+}
+
+.pagination-container .d-flex > div:first-child {
+  font-weight: 500;
+  color: #495057;
+  font-size: 14px;
+  background: rgba(40, 167, 69, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+.pagination {
+  margin-bottom: 0;
+  animation: slideInFromBottom 0.6s ease-out;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination .page-item {
+  margin: 0;
+}
+
+.pagination .page-link {
+  color: #495057;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 2px solid #e9ecef;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+  min-width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pagination .page-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.pagination .page-link:hover::before {
+  left: 100%;
+}
+
+.pagination .page-link:hover {
+  color: #28a745;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border-color: #28a745;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+  color: white;
+}
+
+.pagination .page-item.active .page-link {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  border-color: #28a745;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+  font-weight: 600;
+}
+
+.pagination .page-item.active .page-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: linear-gradient(90deg, #28a745, #20c997);
+  border-radius: 2px;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #adb5bd;
+  background: #f8f9fa;
+  border-color: #e9ecef;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.pagination .page-item.disabled .page-link:hover {
+  transform: none;
+  box-shadow: none;
+  background: #f8f9fa;
+  color: #adb5bd;
+}
+
+.pagination .page-link i {
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.pagination .page-link:hover i {
+  transform: scale(1.3);
+}
+
+/* Estilos especiales para los botones de navegación */
+.pagination .page-item:first-child .page-link,
+.pagination .page-item:last-child .page-link {
+  font-weight: 600;
+  font-size: 13px;
+  min-width: 60px;
+}
+
+.pagination .page-item:first-child .page-link:hover,
+.pagination .page-item:last-child .page-link:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+}
+
+/* Estilos especiales para botones de navegación */
+.pagination .page-item:first-child .page-link,
+.pagination .page-item:last-child .page-link {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border-color: #28a745;
+  font-weight: 600;
+}
+
+.pagination .page-item:first-child .page-link:hover,
+.pagination .page-item:last-child .page-link:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+}
+
+.pagination .page-item:first-child.disabled .page-link,
+.pagination .page-item:last-child.disabled .page-link {
+  background: #f8f9fa;
+  color: #adb5bd;
+  border-color: #e9ecef;
+}
+
+.pagination .page-item:first-child.disabled .page-link:hover,
+.pagination .page-item:last-child.disabled .page-link:hover {
+  transform: none;
+  box-shadow: none;
+  background: #f8f9fa;
+  color: #adb5bd;
+}
+
+/* Estilos para estado de carga */
+.loading-state {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Estilos para estado vacío */
+.empty-state {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.empty-state i {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Estilos para iconos */
+.btn i {
+  transition: all 0.3s ease;
+}
+
+.btn:hover i {
+  transform: scale(1.1);
+}
+
+/* Efecto de partículas flotantes */
+.data-table-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundFloat 20s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(-1deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .data-table-container {
+    animation: slideInFromTop 0.4s ease-out;
+  }
+  
+  .filters-container {
+    padding: 15px;
+  }
+  
+  .filter-group {
+    animation: filterSlideIn 0.3s ease-out;
+  }
+  
+  .btn-outline-primary {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .table-responsive {
+    font-size: 12px;
+  }
+  
+  .filters-container .row {
+    margin: 0;
+  }
+  
+  .filters-container .col-md-2 {
+    padding: 0 5px;
+    margin-bottom: 15px;
+  }
+  
+  .filters-container .form-label {
+    font-size: 12px;
+  }
+  
+  .filters-container .form-control,
+  .filters-container .form-select {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+  
+  .pagination-container {
+    padding: 20px;
+  }
+  
+  .pagination .page-link {
+    padding: 10px 12px;
+    font-size: 13px;
+    min-width: 40px;
+    height: 40px;
+  }
+  
+  .pagination .page-link i {
+    font-size: 12px;
+  }
+  
+  .pagination .page-item:first-child .page-link,
+  .pagination .page-item:last-child .page-link {
+    font-size: 12px;
+    min-width: 50px;
+  }
+  
+  .pagination-container .d-flex {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .pagination-container .d-flex > div:first-child {
+    text-align: center;
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+  
+  .pagination {
+    gap: 6px;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+  
+  .table tbody tr:hover {
+    transform: none;
+  }
+  
+  .pagination .page-link:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+  
+  .pagination .page-item.active .page-link {
+    transform: translateY(-1px);
+  }
+}
+
+/* Estilos para mensaje de no resultados */
+.table tbody tr td[colspan] {
+  padding: 40px 20px;
+  color: #6c757d;
+  font-style: italic;
+  background-color: #f8f9fa;
+}

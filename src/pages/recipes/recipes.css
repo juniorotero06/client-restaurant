@@ -1,0 +1,374 @@
+/* Puedes agregar estos estilos en tu archivo CSS global o en un archivo CSS específico para el componente */
+
+.table-responsive {
+  margin: 20px auto;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.custom-img {
+  width: 100px; /* Ajusta este valor como lo necesites */
+  height: auto; /* Esto mantendrá la proporción de la imagen */
+}
+
+/* Mejora la responsividad en dispositivos móviles */
+@media (max-width: 768px) {
+  .table-responsive {
+    border: 0;
+  }
+  .custom-img {
+    width: 50px; /* Ajusta el tamaño de la imagen para pantallas pequeñas */
+  }
+}
+
+/* Estilos para la página de recetas */
+.recipes-container {
+  padding: 20px;
+}
+
+.recipes-section {
+  animation: slideInFromTop 0.6s ease-out;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para información de recetas */
+.recipe-name {
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.recipe-description {
+  color: #666;
+  font-size: 12px;
+  line-height: 1.4;
+  max-width: 200px;
+}
+
+/* Estilos para lista de ingredientes */
+.ingredients-list {
+  text-align: left;
+}
+
+.ingredient-expandable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ingredient-expandable:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para información de autor */
+.author-info {
+  font-size: 12px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-info i {
+  color: #007bff;
+  margin-right: 4px;
+}
+
+/* Estilos para detalles de receta */
+.recipe-details {
+  text-align: center;
+}
+
+/* Estilos para detalles expandidos */
+.recipe-details-expanded {
+  animation: fadeInDetails 0.4s ease-out;
+}
+
+@keyframes fadeInDetails {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.detail-item {
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #007bff;
+}
+
+.detail-item strong {
+  color: #495057;
+  margin-right: 8px;
+}
+
+/* Estilos para grid de ingredientes */
+.ingredients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ingredient-item {
+  margin-bottom: 4px;
+}
+
+/* Estilos para botones de acción */
+.btn-outline-primary,
+.btn-outline-success,
+.btn-outline-info {
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2px;
+}
+
+.btn-outline-primary:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+.btn-outline-success:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.btn-outline-info:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(23, 162, 184, 0.3);
+}
+
+/* Estilos para el contenedor principal */
+.recipes-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de partículas flotantes */
+.recipes-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(33, 150, 243, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundFloat 20s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(-1deg);
+  }
+}
+
+/* Estilos para iconos */
+.fas, .far {
+  transition: all 0.3s ease;
+}
+
+.fas:hover, .far:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .recipes-container {
+    padding: 15px;
+  }
+  
+  .recipes-section {
+    margin: 10px;
+  }
+  
+  .recipe-name {
+    font-size: 13px;
+  }
+  
+  .recipe-description {
+    font-size: 11px;
+    max-width: 150px;
+  }
+  
+  .author-info {
+    font-size: 11px;
+  }
+  
+  .btn-outline-primary,
+  .btn-outline-success,
+  .btn-outline-info {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .detail-item {
+    padding: 6px;
+    font-size: 12px;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* Estilos para badges */
+.badge {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.badge:hover::before {
+  left: 100%;
+}
+
+.badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el título de la página */
+.page-title {
+  background: linear-gradient(45deg, #ff6b35 0%, #f7931e 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Estilos para animaciones adicionales */
+.recipes-section {
+  animation: slideInFromTop 0.6s ease-out;
+}
+
+.recipe-details-expanded {
+  animation: fadeInDetails 0.4s ease-out;
+}
+
+/* Estilos para el estado de carga */
+.loading-state {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Estilos para el estado vacío */
+.empty-state {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  margin: 20px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.empty-state i {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
