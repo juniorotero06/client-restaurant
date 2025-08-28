@@ -1,11 +1,13 @@
 {
   "short_name": "Chef AI",
   "name": "Chef AI - Sistema de Recetas con IA",
+  "description": "Sistema de gestión de recetas con integración de IA usando Google Gemini Flash 2.5",
   "icons": [
     {
       "src": "favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     },
     {
       "src": "favicon.ico",
@@ -23,8 +25,12 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#00B19C",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["food", "lifestyle", "productivity"],
+  "lang": "es",
+  "dir": "ltr"
 }
