@@ -1,0 +1,39 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/kitchen/:path*",
+      "destination": "${KITCHEN_SERVICE_URL}/kitchen/:path*"
+    },
+    {
+      "source": "/api/recipes/:path*",
+      "destination": "${RECIPES_SERVICE_URL}/recipes/:path*"
+    },
+    {
+      "source": "/health/kitchen",
+      "destination": "${KITCHEN_SERVICE_URL.replace('/api', '')}/health"
+    },
+    {
+      "source": "/health/recipes",
+      "destination": "${RECIPES_SERVICE_URL.replace('/api', '')}/health"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        }
+      ]
+    }
+  ]
+}

@@ -6,10 +6,10 @@ const API_CONFIG = {
     RECIPES_SERVICE: process.env.REACT_APP_RECIPES_SERVICE_URL || 'http://localhost:3001/api'
   },
   
-  // URLs de producción (Railway)
+  // URLs de producción (Vercel con proxy)
   production: {
-    KITCHEN_SERVICE: process.env.REACT_APP_KITCHEN_SERVICE_URL || 'https://alegra-kitchen-production.up.railway.app/api',
-    RECIPES_SERVICE: process.env.REACT_APP_RECIPES_SERVICE_URL || 'https://alegra-recipes-production.up.railway.app/api'
+    KITCHEN_SERVICE: '/api/kitchen',
+    RECIPES_SERVICE: '/api/recipes'
   },
   
   // URLs de staging (Render)
@@ -44,21 +44,21 @@ export const API_URLS = {
 export const ENDPOINTS = {
   // Kitchen Service Endpoints
   KITCHEN: {
-    REQUEST_PLATE: `${API_URLS.KITCHEN_SERVICE}/kitchen/request-plate`,
-    GET_RECIPES: `${API_URLS.KITCHEN_SERVICE}/kitchen/recipes`,
-    GET_INGREDIENTS: `${API_URLS.KITCHEN_SERVICE}/kitchen/ingredients`,
-    GET_ORDERS: `${API_URLS.KITCHEN_SERVICE}/kitchen/orders`,
-    GET_ORDERS_IN_PROGRESS: `${API_URLS.KITCHEN_SERVICE}/kitchen/orders/in-progress`,
-    GET_ORDERS_COMPLETED: `${API_URLS.KITCHEN_SERVICE}/kitchen/orders/completed`,
-    GET_PURCHASE_HISTORY: `${API_URLS.KITCHEN_SERVICE}/kitchen/purchase-history`,
-    HEALTH: `${API_URLS.KITCHEN_SERVICE.replace('/api', '')}/health`
+    REQUEST_PLATE: `${API_URLS.KITCHEN_SERVICE}/request-plate`,
+    GET_RECIPES: `${API_URLS.KITCHEN_SERVICE}/recipes`,
+    GET_INGREDIENTS: `${API_URLS.KITCHEN_SERVICE}/ingredients`,
+    GET_ORDERS: `${API_URLS.KITCHEN_SERVICE}/orders`,
+    GET_ORDERS_IN_PROGRESS: `${API_URLS.KITCHEN_SERVICE}/orders/in-progress`,
+    GET_ORDERS_COMPLETED: `${API_URLS.KITCHEN_SERVICE}/orders/completed`,
+    GET_PURCHASE_HISTORY: `${API_URLS.KITCHEN_SERVICE}/purchase-history`,
+    HEALTH: currentEnv === 'production' ? '/health/kitchen' : `${API_URLS.KITCHEN_SERVICE.replace('/api', '')}/health`
   },
   
   // Recipes Service Endpoints
   RECIPES: {
-    GET_RECIPES: `${API_URLS.RECIPES_SERVICE}/recipes/index`,
-    CREATE_ORDER: `${API_URLS.RECIPES_SERVICE}/recipes/order`,
-    HEALTH: `${API_URLS.RECIPES_SERVICE.replace('/api', '')}/health`
+    GET_RECIPES: `${API_URLS.RECIPES_SERVICE}/index`,
+    CREATE_ORDER: `${API_URLS.RECIPES_SERVICE}/order`,
+    HEALTH: currentEnv === 'production' ? '/health/recipes' : `${API_URLS.RECIPES_SERVICE.replace('/api', '')}/health`
   }
 };
 
