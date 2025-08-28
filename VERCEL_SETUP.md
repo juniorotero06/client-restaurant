@@ -28,9 +28,13 @@ En la sección "Environment Variables", agrega:
 ```
 KITCHEN_SERVICE_URL=http://ip172-18-0-50-d2o6s3s69qi0008n5h9g-3000.direct.labs.play-with-docker.com/api
 RECIPES_SERVICE_URL=http://ip172-18-0-50-d2o6s3s69qi0008n5h9g-3001.direct.labs.play-with-docker.com/api
+KITCHEN_SERVICE_BASE_URL=http://ip172-18-0-50-d2o6s3s69qi0008n5h9g-3000.direct.labs.play-with-docker.com
+RECIPES_SERVICE_BASE_URL=http://ip172-18-0-50-d2o6s3s69qi0008n5h9g-3001.direct.labs.play-with-docker.com
 ```
 
-**Nota:** Las URLs deben terminar con `/api` para que funcionen correctamente con la configuración del proxy.
+**Nota:** 
+- Las URLs con `/api` se usan para los endpoints de la aplicación
+- Las URLs sin `/api` se usan para los health checks
 
 ### Paso 3: Aplicar a todos los entornos
 - Marca "Production", "Preview" y "Development"
@@ -95,6 +99,8 @@ Para verificar que todo funciona:
 **Health checks:**
 - Frontend hace petición a: `https://tu-app.vercel.app/health/kitchen`
 - Vercel redirige a: `http://ip172-18-0-50-d2o6s3s69qi0008n5h9g-3000.direct.labs.play-with-docker.com/health`
+- Frontend hace petición a: `https://tu-app.vercel.app/health/recipes`
+- Vercel redirige a: `http://ip172-18-0-50-d2o6s3s69qi0008n5h9g-3001.direct.labs.play-with-docker.com/health`
 
 ## Troubleshooting
 

@@ -10,11 +10,11 @@
     },
     {
       "source": "/health/kitchen",
-      "destination": "${KITCHEN_SERVICE_URL.replace('/api', '')}/health"
+      "destination": "${KITCHEN_SERVICE_BASE_URL}/health"
     },
     {
       "source": "/health/recipes",
-      "destination": "${RECIPES_SERVICE_URL.replace('/api', '')}/health"
+      "destination": "${RECIPES_SERVICE_BASE_URL}/health"
     }
   ],
   "headers": [
