@@ -5,7 +5,7 @@ import CircularIndeterminate from "../../components/spinner/spinner";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ENDPOINTS } from "../../config/api";
+import { ENDPOINTS, axiosConfig } from "../../config/api";
 import "./ai-integration.css";
 
 const AIIntegration = () => {
@@ -19,7 +19,7 @@ const AIIntegration = () => {
     setIsLoading(true);
     try {
       // Obtener recetas reales del backend
-      const response = await axios.get(ENDPOINTS.KITCHEN.GET_RECIPES);
+      const response = await axios.get(ENDPOINTS.KITCHEN.GET_RECIPES, axiosConfig);
       
       let recipes = [];
       

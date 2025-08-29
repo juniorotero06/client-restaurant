@@ -7,7 +7,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./recipes.css";
-import { ENDPOINTS } from "../../config/api";
+import { ENDPOINTS, axiosConfig } from "../../config/api";
 
 const Recipes = () => {
   const [data, setData] = useState([]);
@@ -17,7 +17,7 @@ const Recipes = () => {
     const getRecipesData = () => {
       setIsLoading(true);
       axios
-        .get(ENDPOINTS.RECIPES.GET_RECIPES)
+        .get(ENDPOINTS.RECIPES.GET_RECIPES, axiosConfig)
         .then((response) => {
           setData(response.data);
         })

@@ -5,7 +5,7 @@ import DataTable from "../../components/DataTable";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ENDPOINTS } from "../../config/api";
+import { ENDPOINTS, axiosConfig } from "../../config/api";
 import "./ingredients.css";
 
 const Ingredients = () => {
@@ -19,7 +19,7 @@ const Ingredients = () => {
   const loadIngredients = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get(ENDPOINTS.KITCHEN.GET_INGREDIENTS);
+      const response = await axios.get(ENDPOINTS.KITCHEN.GET_INGREDIENTS, axiosConfig);
       setIngredients(response.data);
     } catch (error) {
       console.error("Error al cargar los ingredientes", error);

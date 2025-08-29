@@ -7,7 +7,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./purchase.css";
-import { ENDPOINTS } from "../../config/api";
+import { ENDPOINTS, axiosConfig } from "../../config/api";
 
 const PurchaseHistory = () => {
   const [data, setData] = useState([]);
@@ -17,7 +17,7 @@ const PurchaseHistory = () => {
     const getPurchaseHistoryData = () => {
       setIsLoading(true);
       axios
-        .get(ENDPOINTS.KITCHEN.GET_PURCHASE_HISTORY)
+        .get(ENDPOINTS.KITCHEN.GET_PURCHASE_HISTORY, axiosConfig)
         .then((response) => {
           setData(response.data);
         })

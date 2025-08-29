@@ -6,7 +6,7 @@ import DataTable from "../../components/DataTable";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import { ENDPOINTS } from "../../config/api";
+import { ENDPOINTS, axiosConfig } from "../../config/api";
 import "./orders-component.css";
 
 function OrdersComponent() {
@@ -96,7 +96,7 @@ function OrdersComponent() {
     
     try {
       // Usar el endpoint CREATE_ORDER para crear una orden con cantidad específica
-      const response = await axios.post(`${ENDPOINTS.RECIPES.CREATE_ORDER}/${ordersQuantity}`);
+      const response = await axios.post(`${ENDPOINTS.RECIPES.CREATE_ORDER}/${ordersQuantity}`, {}, axiosConfig);
       console.log("Orden creada:", response.data);
       
       toast.info(`Creando orden de ${ordersQuantity} platos...`, toastProps);

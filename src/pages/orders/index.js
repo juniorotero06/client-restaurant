@@ -6,7 +6,7 @@ import DataTable from "../../components/DataTable";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ENDPOINTS } from "../../config/api";
+import { ENDPOINTS, axiosConfig } from "../../config/api";
 import "./orders.css";
 
 const Orders = () => {
@@ -24,9 +24,9 @@ const Orders = () => {
     setIsLoading(true);
     try {
       const [allOrders, inProgress, completed] = await Promise.all([
-        axios.get(ENDPOINTS.KITCHEN.GET_ORDERS),
-        axios.get(ENDPOINTS.KITCHEN.GET_ORDERS_IN_PROGRESS),
-        axios.get(ENDPOINTS.KITCHEN.GET_ORDERS_COMPLETED)
+              axios.get(ENDPOINTS.KITCHEN.GET_ORDERS, axiosConfig),
+      axios.get(ENDPOINTS.KITCHEN.GET_ORDERS_IN_PROGRESS, axiosConfig),
+      axios.get(ENDPOINTS.KITCHEN.GET_ORDERS_COMPLETED, axiosConfig)
       ]);
 
       setOrders(allOrders.data);
