@@ -2,7 +2,7 @@
 const API_CONFIG = {
   // URL de desarrollo local (API Gateway)
   development: {
-    API_GATEWAY: process.env.REACT_APP_API_GATEWAY_URL || 'http://localhost:8080'
+    API_GATEWAY: process.env.REACT_APP_API_GATEWAY_URL || 'https://da08ffc240d6.ngrok-free.app'
   },
   
   // URL de producción (API Gateway)
@@ -13,7 +13,7 @@ const API_CONFIG = {
   // URL de staging (API Gateway)
   staging: {
     API_GATEWAY: process.env.REACT_APP_API_GATEWAY_URL || 'https://tu-api-gateway-url'
-  }
+  }                                                                                                                                                                                                                                                                                
 };
 
 // Determinar el entorno
@@ -68,7 +68,8 @@ export const ENDPOINTS = {
 export const axiosConfig = {
   timeout: 10000,
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'ngrok-skip-browser-warning': '1' // Evita la página de advertencia de ngrok
   }
 };
 
@@ -82,13 +83,24 @@ export const buildGatewayUrl = (path) => {
   return `${API_URLS.API_GATEWAY}${path}`;
 };
 
+// Función helper para obtener headers de ngrok
+export const getNgrokHeaders = () => {
+  return {
+    'ngrok-skip-browser-warning': '1'
+  };
+};
+
 // Función para verificar si el API Gateway está disponible
 export const checkServicesHealth = async () => {
   try {
+    const headers = {
+      'ngrok-skip-browser-warning': '1'
+    };
+    
     const [gatewayHealth, kitchenHealth, recipesHealth] = await Promise.all([
-      fetch(ENDPOINTS.GATEWAY.HEALTH),
-      fetch(ENDPOINTS.KITCHEN.HEALTH),
-      fetch(ENDPOINTS.RECIPES.HEALTH)
+      fetch(ENDPOINTS.GATEWAY.HEALTH, { headers }),
+      fetch(ENDPOINTS.KITCHEN.HEALTH, { headers }),
+      fetch(ENDPOINTS.RECIPES.HEALTH, { headers })
     ]);
     
     return {
@@ -115,6 +127,7 @@ export default {
   axiosConfig,
   getApiUrl,
   buildGatewayUrl,
+  getNgrokHeaders,
   checkServicesHealth,
   environment: currentEnv
 }; 
